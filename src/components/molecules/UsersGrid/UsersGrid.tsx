@@ -6,7 +6,7 @@ const UsersGrid = ({users}) => {
   return (
     <div>
         {users?.map(user => {
-           return <UserCard name={user.name} postCount={user.postCount}/>
+           return <UserCard key={user.id} name={user.name} postCount={user.postCount}/>
         })}
     </div>
   )
