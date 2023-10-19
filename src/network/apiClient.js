@@ -33,4 +33,4 @@ const geospatialClient = axios.create({
 userResourceClient.interceptors.response.use(response, error);
 geospatialClient.interceptors.response.use(response, error);
 
-export { userClient, geospatialClient };
+export { userResourceClient, geospatialClient };

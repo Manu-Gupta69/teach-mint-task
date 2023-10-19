@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.scss'
+import { UsersGrid } from './components/molecules'
+import useGetUsers from './hooks/User/useGetUsers'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+   const {users, isLoading , error} = useGetUsers();
+  console.log(isLoading , users)
   return (
     <>
-      <div> PROJECT STARTED </div>
+     {
+      isLoading ? <div> LOADING.....</div>: <UsersGrid users={users} />
+    } 
     </>
   )
 }
