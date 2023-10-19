@@ -1,2 +1,3 @@
 import UsersGrid from "./UsersGrid/UsersGrid";
-export {UsersGrid};
+import PostsGrid from "./PostsGrid/PostsGrid";
+export {UsersGrid , PostsGrid};

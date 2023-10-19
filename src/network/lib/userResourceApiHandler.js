@@ -11,7 +11,7 @@ const getUser = (id = 1) => {
 
 // FETCHING POSTS
 const getPosts = () => {
-  return userResourceClient.get("/postss");
+  return userResourceClient.get("/posts");
 };
 
 const getPost = (id) => {
