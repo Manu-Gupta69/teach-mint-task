@@ -15,7 +15,7 @@ const error = (error) => {
 };
 
 const userResourceClient = axios.create({
-  baseURL: `https://jsonplaceholder.typicode.com`,
+  baseURL: import.meta.env.VITE_RESOURCES_BASE_URL,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const userResourceClient = axios.create({
 });
 
 const geospatialClient = axios.create({
-  baseURL: `http://worldtimeapi.org/api/timezone`,
+  baseURL: import.meta.env.VITE_GEO_BASE_URL,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
