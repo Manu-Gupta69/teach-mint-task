@@ -1,8 +1,38 @@
-# React + Vite
+# TEACH-MINT-ASSIGNMENT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the documentation for teach-mint-task project. This README will guide you through the setup and usage of the application.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, please ensure you have the following tools installed on your system:
+
+- [Node.js](https://nodejs.org/): JavaScript runtime environment.
+- [npm](https://www.npmjs.com/): Node Package Manager.
+
+## Getting Started
+
+### 1. Clone the Repository
+
+Clone this repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/your-username/your-project.git
+cd your-project
+```
+
+### 2. Set Environment Variables
+
+- Create a .env file in the project's root directory if it doesn't already exist.
+- Copy all the environment variable keys required for your project into .env. You can use the .env.local file as a template.
+
+### 3. Install Project Dependencies
+
+```bash
+npm install
+```
+
+### 5. Running the Application
+
+```bash
+npm run dev
+```
