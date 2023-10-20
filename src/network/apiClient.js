@@ -23,7 +23,7 @@ const userResourceClient = axios.create({
 });
 
 const geospatialClient = axios.create({
-  baseURL: `https://jsonplaceholder.typicode.com`,
+  baseURL: `http://worldtimeapi.org/api/timezone`,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",

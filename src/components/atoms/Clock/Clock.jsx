@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Clock.scss";
 import Button from "../Button/Button";
+import { Color } from "../../../Constant/Colors";
 
 const Clock = ({ timeData }) => {
   const timerId = useRef(null);
@@ -55,12 +56,14 @@ const Clock = ({ timeData }) => {
         <Button
           title={"Start"}
           onBtnClick={startBtnHandler}
-          style={{ backgroundColor: start ? "grey" : "#5CFF5C" }}
+          style={{
+            backgroundColor: start ? Color["grey"] : Color.startGreen,
+          }}
         />
         <Button
           title={"Pause"}
           onBtnClick={stopBtnHandler}
-          style={{ backgroundColor: start ? "#FF4500" : "grey" }}
+          style={{ backgroundColor: start ? Color.pauseOrange : Color.grey }}
         />
       </div>
     </div>

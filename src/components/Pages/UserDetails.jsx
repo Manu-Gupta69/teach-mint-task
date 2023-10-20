@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { PostsGrid } from "../molecules";
+import { PostsGrid, UserDetailsNavBar } from "../molecules";
 import { useParams } from "react-router-dom";
-import { Clock, UserDetailsCard } from "../atoms";
+import { UserDetailsCard } from "../atoms";
 
 const UserDetails = ({ users, posts }) => {
   const { userId } = useParams();
@@ -12,7 +12,7 @@ const UserDetails = ({ users, posts }) => {
 
   return (
     <>
-      <Clock timeData={{ hour: 13, min: 3, sec: 54 }} />
+      <UserDetailsNavBar />
       <UserDetailsCard userDetails={userDetails} />
       <PostsGrid userId={userId} posts={posts} />;
     </>

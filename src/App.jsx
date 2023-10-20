@@ -3,7 +3,7 @@ import useGetPosts from "./hooks/Post/useGetPosts";
 import useGetUsers from "./hooks/User/useGetUsers";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { getPostCollection } from "./utils/Post";
+import { getPostCollection } from "./utils";
 import { useMemo } from "react";
 
 function App() {
