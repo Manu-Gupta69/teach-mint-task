@@ -11,11 +11,11 @@ const UserDetails = ({ users, posts }) => {
   }, [users]);
 
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <UserDetailsNavBar />
       <UserDetailsCard userDetails={userDetails} />
       <PostsGrid userId={userId} posts={posts} />;
-    </>
+    </div>
   );
 };
 
