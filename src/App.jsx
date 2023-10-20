@@ -5,8 +5,10 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { getPostCollection } from "./utils";
 import { useMemo } from "react";
+import useScrollToTop from "./hooks/helper/useScrollToTop";
 
 function App() {
+  useScrollToTop();
   const { users, isLoading: fetchingUsers, error: userError } = useGetUsers();
   const { posts, isLoading: fetchingPosts, error: postError } = useGetPosts();
 

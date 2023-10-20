@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Clock, Dropdown } from "../../atoms";
 import useGetCountries from "../../../hooks/Geospatial/useGetCountries";
 import "./UserDetailsNavBar.scss";
 import { extractTime } from "../../../utils/index";
+import { Color } from "../../../Constant/Colors";
+import { Button } from "../../atoms";
 
 const UserDetailsNavBar = () => {
+  const navigate = useNavigate();
   const {
     isLoading,
     error,
@@ -14,9 +18,6 @@ const UserDetailsNavBar = () => {
   } = useGetCountries();
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const optionSelectHandler = (event) => {
-    setSelectedOption(event.target.value);
-  };
   useEffect(() => {
     setSelectedOption(countries[0]);
   }, [countries]);
@@ -28,11 +29,24 @@ const UserDetailsNavBar = () => {
     })();
   }, [selectedOption]);
 
+  const optionSelectHandler = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const btnClickHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       {!error ? (
         !isLoading && countryTimeDetails && selectedOption ? (
           <div className="user-nav-parent">
+            <Button
+              title={"back"}
+              style={{ backgroundColor: Color.grey }}
+              onBtnClick={btnClickHandler}
+            />
             <Dropdown
               selectedOption={selectedOption}
               optionSelectHandler={optionSelectHandler}
@@ -44,7 +58,7 @@ const UserDetailsNavBar = () => {
           <div>Loading...</div>
         )
       ) : (
-        <div>{Error}</div>
+        <div>{error}</div>
       )}
     </>
   );
