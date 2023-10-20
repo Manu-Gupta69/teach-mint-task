@@ -1,4 +1,4 @@
-import { Home, UserDetails } from "./components/Page";
+import { Home, UserDetails } from "./components/Pages";
 import useGetPosts from "./hooks/Post/useGetPosts";
 import useGetUsers from "./hooks/User/useGetUsers";
 import "./App.scss";
@@ -15,6 +15,8 @@ function App() {
     return getPostCollection(posts);
   }, [posts]);
 
+  const isLoding = fetchingPosts || fetchingUsers;
+
   return (
     <>
       {userError || postError ? (
@@ -24,7 +26,7 @@ function App() {
           <Route
             path="/"
             element={
-              fetchingPosts || fetchingUsers ? (
+              isLoding ? (
                 <div> LOADING.... </div>
               ) : (
                 <Home users={users} posts={postCollection} />
@@ -34,7 +36,7 @@ function App() {
           <Route
             path="user/:userId"
             element={
-              fetchingPosts || fetchingUsers ? (
+              isLoding ? (
                 <div> LOADING....</div>
               ) : (
                 <UserDetails users={users} posts={postCollection} />

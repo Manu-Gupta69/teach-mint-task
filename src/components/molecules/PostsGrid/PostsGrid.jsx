@@ -4,7 +4,6 @@ import "./PostsGrid.scss";
 
 const PostsGrid = ({ userId, posts }) => {
   const userPost = posts[userId];
-  console.log(userId, userPost);
   return (
     <div className="post-grid-parent">
       {userPost.map((post) => {
